@@ -20,7 +20,7 @@ const pieces = [
     id: 2,
     name: "First Porcelain",
     description:
-      "My first real porcelain projects — a faceted jar and a mushroom lamp broken into stalk and cap. Porcelain is a completely different animal. Thinner walls, less forgiveness. I'm learning.",
+      "My first real porcelain projects — a faceted jar and a mushroom lamp broken into stalk and cap. Porcelain is a completely different animal. Thinner walls, less forgiveness.",
     image: studioGroup,
     imageLarge: studioGroup,
     status: "inquire",
@@ -38,16 +38,16 @@ const pieces = [
     id: 4,
     name: "The One I Left in Kyoto",
     description:
-      "Learned this technique in a Kyoto studio. Couldn't take it home — you can only ship two pieces per class, and I'd already used mine up. Still think about this one. Clean lines, no carving, just the wheel doing its thing.",
+      "Learned this technique in a Kyoto studio. Couldn't take it home — you can only ship two pieces per class, and I'd already used mine up. Still think about this one.",
     image: kyotoVase,
     imageLarge: kyotoVase,
     status: "sold",
   },
   {
     id: 5,
-    name: "Rice Bowl — Keeper",
+    name: "Rice Bowl",
     description:
-      "This one's mine. A rice bowl I threw in Kyoto and actually got to bring home. Glazing it with a traditional earth tone — warm, grounded, the kind of color that makes food look better. Some pieces you just can't let go of.",
+      "A rice bowl I threw in Kyoto and actually got to bring home. Glazing it with a traditional earth tone — warm, grounded, the kind of color that makes food look better.",
     image: kyotoBowl,
     imageLarge: kyotoBowl,
     status: "sold",
