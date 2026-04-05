@@ -55,7 +55,7 @@ export default function About() {
                   Instagram &mdash; @tellaceramics
                 </a>
                 <p className="text-sm font-light text-[#2C2C2C]/60">
-                  Commissions open
+                  Commissions currently closed &mdash; exploring new directions
                 </p>
               </div>
             </div>
