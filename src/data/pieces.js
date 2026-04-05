@@ -9,54 +9,54 @@ import heroBowl from "../assets/Hero.jpg";
 const pieces = [
   {
     id: 1,
-    name: "Faceted Lidded Jar No. 1",
+    name: "Tokyo Blue",
     description:
-      "Wheel-thrown stoneware with hand-carved faceted panels. The first piece in a new series exploring sharp geometry on round forms.",
+      "This bowl lives in my head rent-free. Blue turquoise glaze with these tiny sparkles that I've been obsessing over since Tokyo. Working with ClaySpace in Greenpoint now, trying to reverse-engineer something close. An ode to Japan, one test tile at a time.",
     image: studioJar,
     imageLarge: studioJar,
     status: "available",
   },
   {
     id: 2,
-    name: "Studio Forms — Group Study",
+    name: "First Porcelain",
     description:
-      "Faceted vessels in progress. Multiple forms exploring different facet depths and angles on the same thrown profile.",
+      "My first real porcelain projects — a faceted jar and a mushroom lamp broken into stalk and cap. Porcelain is a completely different animal. Thinner walls, less forgiveness. I'm learning.",
     image: studioGroup,
     imageLarge: studioGroup,
     status: "inquire",
   },
   {
     id: 3,
-    name: "Faceted Forms — Bird's Eye",
+    name: "Lidded Jar — Light Study",
     description:
-      "Four faceted pieces seen from above. The carving reads completely differently from this angle — all planes, no curves.",
+      "Playing with a lidded jar, but really playing with what the facets do to light. Every angle throws a different shadow. The lid creates this little conversation between the carved planes on top and the ones below.",
     image: studioBirdsEye,
     imageLarge: studioBirdsEye,
     status: "available",
   },
   {
     id: 4,
-    name: "Kyoto Vase — Tall Form",
+    name: "The One I Left in Kyoto",
     description:
-      "Thrown in a Kyoto studio. Clean lines, no carving — just the clay and the wheel. Waiting on a bronze glaze.",
+      "Learned this technique in a Kyoto studio. Couldn't take it home — you can only ship two pieces per class, and I'd already used mine up. Still think about this one. Clean lines, no carving, just the wheel doing its thing.",
     image: kyotoVase,
     imageLarge: kyotoVase,
     status: "sold",
   },
   {
     id: 5,
-    name: "Kyoto Tea Bowl",
+    name: "Rice Bowl — Keeper",
     description:
-      "Open bowl thrown in Japan. Wide rim, gentle taper. The glaze ticket is still attached — choosing between white and bronze.",
+      "This one's mine. A rice bowl I threw in Kyoto and actually got to bring home. Glazing it with a traditional earth tone — warm, grounded, the kind of color that makes food look better. Some pieces you just can't let go of.",
     image: kyotoBowl,
     imageLarge: kyotoBowl,
-    status: "inquire",
+    status: "sold",
   },
   {
     id: 6,
-    name: "Kyoto Vase — On the Wheel",
+    name: "Kyoto Vase",
     description:
-      "Freshly thrown, still wet. Round belly, narrow neck. This one stayed smooth — no faceting, just the wheel's rhythm.",
+      "Going aquamarine on the glaze for this one. Round belly, narrow neck, that little flare at the lip. Once it's fired I'm testing it with a kintsugi kit I have at home — break it, repair it with gold, see what it becomes.",
     image: kyotoWheel,
     imageLarge: kyotoWheel,
     status: "available",
