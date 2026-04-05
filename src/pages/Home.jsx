@@ -8,8 +8,11 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-2xl">
           <FadeInUp>
-            <h1 className="text-5xl md:text-7xl font-extralight leading-tight tracking-wide">
-              New chapter. New clay.
+            <h1
+              className="text-[72px] md:text-[96px] font-extralight leading-none text-[#2C2C2C] mb-4"
+              style={{ fontFamily: "'Noto Sans JP', sans-serif" }}
+            >
+              てら
             </h1>
           </FadeInUp>
           <FadeInUp className="mt-6">
