@@ -1,4 +1,5 @@
 import FadeInUp from "../components/FadeInUp";
+import studioGroup from "../assets/Studio2.jpg";
 
 export default function About() {
   return (
@@ -8,7 +9,7 @@ export default function About() {
           {/* Image */}
           <FadeInUp>
             <img
-              src="https://picsum.photos/700/900?grayscale"
+              src={studioGroup}
               alt="The artist at work"
               className="w-full h-auto object-cover"
               loading="lazy"
@@ -23,28 +24,25 @@ export default function About() {
               </h1>
 
               <p className="font-light leading-[1.8] mb-6">
-                I&rsquo;m a ceramicist working out of New York, currently
-                obsessed with what happens when you push wheel-thrown forms into
-                something harder-edged and more deliberate.
+                I grew up in Caguana, Puerto Rico, anchored by my
+                people&rsquo;s ties to the land and the quiet magic of my
+                mother&rsquo;s ceramics studio. Today, working out of New York,
+                I have rekindled my love for clay as my truest form of
+                self-expression.
               </p>
 
               <p className="font-light leading-[1.8] mb-6">
-                A trip to Japan changed how I work. I came back with a head full
-                of glazes from Tokyo, muscle memory from studios in Kyoto, and a
-                new approach to the wheel that I&rsquo;m still unpacking.
-              </p>
-
-              <p className="font-light leading-[1.8] mb-6">
-                Right now I&rsquo;m exploring faceted surface carving &mdash;
-                the tension between the roundness of a thrown form and the flat,
-                angular planes a carving tool leaves behind. And separately, a
-                series of porcelain mushroom lamps that started as a side
-                experiment and won&rsquo;t let me go.
+                My work is an exploration of light, new clays, and the beauty of
+                the broken. Time spent studying techniques in Japan completely
+                reframed how I want my art to exist in the world. I don&rsquo;t
+                make perfect pots. I make pieces that celebrate the uniqueness
+                and imperfection that defines us all&mdash;from kintsugi repairs
+                to a new series of illuminated mushroom desk lamps.
               </p>
 
               <p className="font-light leading-[1.8] mb-10">
-                This site is a studio journal. Everything here is either
-                available or was. If something catches your eye, reach out.
+                There is more on the horizon, stay tuned if you want to join me
+                on this journey!
               </p>
 
               <div className="border-t border-[#E0DBD3] pt-8 flex flex-col gap-3">

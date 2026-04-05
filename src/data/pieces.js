@@ -1,58 +1,67 @@
+import studioJar from "../assets/Studio1.jpg";
+import studioGroup from "../assets/Studio2.jpg";
+import studioBirdsEye from "../assets/StudioJar.jpg";
+import kyotoVase from "../assets/Kyoto1.jpg";
+import kyotoBowl from "../assets/Kyoto2.jpg";
+import kyotoWheel from "../assets/Kyoto3.jpg";
+import heroBowl from "../assets/Hero.jpg";
+
 const pieces = [
   {
     id: 1,
     name: "Faceted Lidded Jar No. 1",
     description:
-      "Wheel-thrown stoneware with hand-carved faceted panels. Ash glaze, reduction fired.",
-    image: "https://picsum.photos/600/600?grayscale&random=1",
-    imageLarge: "https://picsum.photos/1200/1200?grayscale&random=1",
+      "Wheel-thrown stoneware with hand-carved faceted panels. The first piece in a new series exploring sharp geometry on round forms.",
+    image: studioJar,
+    imageLarge: studioJar,
     status: "available",
   },
   {
     id: 2,
-    name: "Carved Vase — Tokyo Series",
+    name: "Studio Forms — Group Study",
     description:
-      "Inspired by glazes studied in Tokyo. Deep faceted carving on a tall thrown form.",
-    image: "https://picsum.photos/600/600?grayscale&random=2",
-    imageLarge: "https://picsum.photos/1200/1200?grayscale&random=2",
+      "Faceted vessels in progress. Multiple forms exploring different facet depths and angles on the same thrown profile.",
+    image: studioGroup,
+    imageLarge: studioGroup,
     status: "inquire",
   },
   {
     id: 3,
-    name: "Octet Form Study",
+    name: "Faceted Forms — Bird's Eye",
     description:
-      "Eight-sided faceted vessel exploring the boundary between round and angular.",
-    image: "https://picsum.photos/600/600?grayscale&random=3",
-    imageLarge: "https://picsum.photos/1200/1200?grayscale&random=3",
+      "Four faceted pieces seen from above. The carving reads completely differently from this angle — all planes, no curves.",
+    image: studioBirdsEye,
+    imageLarge: studioBirdsEye,
     status: "available",
   },
   {
     id: 4,
-    name: "Kyoto Tea Bowl",
+    name: "Kyoto Vase — Tall Form",
     description:
-      "Small-scale bowl with subtle carved texture. Nod to Kyoto studio techniques.",
-    image: "https://picsum.photos/600/600?grayscale&random=4",
-    imageLarge: "https://picsum.photos/1200/1200?grayscale&random=4",
+      "Thrown in a Kyoto studio. Clean lines, no carving — just the clay and the wheel. Waiting on a bronze glaze.",
+    image: kyotoVase,
+    imageLarge: kyotoVase,
     status: "sold",
   },
   {
     id: 5,
-    name: "Faceted Cylinder — Experimental Glaze",
+    name: "Kyoto Tea Bowl",
     description:
-      "Testing a new iron-rich glaze over carved stoneware. Happy accident territory.",
-    image: "https://picsum.photos/600/600?grayscale&random=5",
-    imageLarge: "https://picsum.photos/1200/1200?grayscale&random=5",
-    status: "available",
+      "Open bowl thrown in Japan. Wide rim, gentle taper. The glaze ticket is still attached — choosing between white and bronze.",
+    image: kyotoBowl,
+    imageLarge: kyotoBowl,
+    status: "inquire",
   },
   {
     id: 6,
-    name: "Mushroom Lamp Prototype",
+    name: "Kyoto Vase — On the Wheel",
     description:
-      "Porcelain lamp form that started as a side experiment. Translucent when lit.",
-    image: "https://picsum.photos/600/600?grayscale&random=6",
-    imageLarge: "https://picsum.photos/1200/1200?grayscale&random=6",
-    status: "inquire",
+      "Freshly thrown, still wet. Round belly, narrow neck. This one stayed smooth — no faceting, just the wheel's rhythm.",
+    image: kyotoWheel,
+    imageLarge: kyotoWheel,
+    status: "available",
   },
 ];
 
+export { heroBowl };
 export default pieces;

@@ -14,7 +14,7 @@ export default function Home() {
           </FadeInUp>
           <FadeInUp className="mt-6">
             <p className="text-base text-[#2C2C2C]/60">
-              Wheel-thrown. Faceted. Tokyo-glazed. Made in New York.
+              Exploring light, form, and the beauty of the broken. Made in New York.
             </p>
           </FadeInUp>
           <FadeInUp className="mt-8 flex items-center justify-center gap-6">

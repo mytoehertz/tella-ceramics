@@ -1,5 +1,5 @@
 import { useState } from "react";
-import pieces from "../data/pieces";
+import pieces, { heroBowl } from "../data/pieces";
 import GalleryCard from "../components/GalleryCard";
 import Lightbox from "../components/Lightbox";
 import FadeInUp from "../components/FadeInUp";
@@ -17,7 +17,7 @@ export default function Gallery() {
           <div className="mb-16">
             <div className="overflow-hidden">
               <img
-                src="https://picsum.photos/1200/900?grayscale"
+                src={heroBowl}
                 alt={featured.name}
                 className="w-full h-auto max-h-[900px] object-cover"
               />
