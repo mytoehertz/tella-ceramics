@@ -23,7 +23,7 @@ const pieces = [
       "This bowl lives in my head rent-free. Blue turquoise glaze with these tiny sparkles that I've been obsessing over since Tokyo. Working with ClaySpace in Greenpoint now, trying to reverse-engineer something close. An ode to Japan, one test tile at a time.",
     image: studioJar,
     imageLarge: studioJar,
-    status: "available",
+    status: "unavailable",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const pieces = [
       "My first real porcelain projects — a faceted jar and a mushroom lamp broken into stalk and cap. Porcelain is a completely different animal. Thinner walls, less forgiveness.",
     image: studioGroup,
     imageLarge: studioGroup,
-    status: "inquire",
+    status: "unavailable",
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const pieces = [
       "Playing with a lidded jar, but really playing with what the facets do to light. Every angle throws a different shadow. The lid creates this little conversation between the carved planes on top and the ones below.",
     image: studioBirdsEye,
     imageLarge: studioBirdsEye,
-    status: "available",
+    status: "unavailable",
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const pieces = [
       "Learned this technique in a Kyoto studio. Couldn't take it home — you can only ship two pieces per class, and I'd already used mine up. Still think about this one.",
     image: kyotoVase,
     imageLarge: kyotoVase,
-    status: "sold",
+    status: "unavailable",
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ const pieces = [
       "A rice bowl I threw in Kyoto and actually got to bring home. Glazing it with a traditional earth tone — warm, grounded, the kind of color that makes food look better.",
     image: kyotoBowl,
     imageLarge: kyotoBowl,
-    status: "sold",
+    status: "unavailable",
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ const pieces = [
       "Going aquamarine on the glaze for this one. Round belly, narrow neck, that little flare at the lip. Once it's fired I'm testing it with a kintsugi kit I have at home — break it, repair it with gold, see what it becomes.",
     image: kyotoWheel,
     imageLarge: kyotoWheel,
-    status: "available",
+    status: "unavailable",
   },
   {
     id: 7,
@@ -77,7 +77,7 @@ const pieces = [
       "Four mushroom lamps trimmed and drying on the bat, waiting for the kiln. This is the last time they're still soft — after this they get fired once to harden, then glazed, then fired again. Everything you do to them from here is permanent.",
     image: trimmedMushroomSet,
     imageLarge: trimmedMushroomSet,
-    status: "inquire",
+    status: "unavailable",
   },
   {
     id: 8,
@@ -86,7 +86,7 @@ const pieces = [
       "Small enough to hold in one hand. Faceted while the clay was still soft, then bisqued into this ghosty white. There's a little drainage hole carved into the base — this one's going to moonlight as a tiny planter once it's glazed.",
     image: porcelainMiniJar,
     imageLarge: porcelainMiniJar,
-    status: "inquire",
+    status: "unavailable",
   },
   {
     id: 9,
@@ -95,7 +95,7 @@ const pieces = [
       "The cap half of a porcelain mushroom lamp. Angular, faceted, almost geologic from this angle. Still bisqueware. Waiting on the glaze that's still being figured out.",
     image: porcelainMushroomCap,
     imageLarge: porcelainMushroomCap,
-    status: "inquire",
+    status: "unavailable",
   },
   {
     id: 10,
@@ -104,7 +104,7 @@ const pieces = [
       "The stem. Small, faceted, with a hole carved in the side for a cord. The cap sits on top eventually — once I decide what color this whole thing is going to be.",
     image: porcelainMushroomStem,
     imageLarge: porcelainMushroomStem,
-    status: "inquire",
+    status: "unavailable",
   },
   {
     id: 11,
@@ -113,7 +113,7 @@ const pieces = [
       "Pinched a pour spout into the side while it was still wet — a soft V, not quite symmetrical. Wide enough for matcha, deep enough for something heartier. Still deciding whether to glaze it smooth or keep the wheel marks.",
     image: matchaBowl,
     imageLarge: matchaBowl,
-    status: "available",
+    status: "unavailable",
   },
   {
     id: 12,
@@ -122,7 +122,7 @@ const pieces = [
       "A full mushroom form in stoneware — rounded top, bulbous base, a ring where the two halves meet. No facets on this one. Wanted to see what the shape does on its own first.",
     image: stonewareMushroom1,
     imageLarge: stonewareMushroom1,
-    status: "available",
+    status: "unavailable",
   },
   {
     id: 13,
@@ -131,7 +131,7 @@ const pieces = [
       "Second stoneware mushroom, different proportions. Wider cap, shorter stem. Funny how much personality comes out of a small change in ratio.",
     image: stonewareMushroom2,
     imageLarge: stonewareMushroom2,
-    status: "available",
+    status: "unavailable",
   },
   {
     id: 14,
@@ -140,7 +140,7 @@ const pieces = [
       "The full crew back from the first firing. Porcelain on the left, stoneware on the right, a little pitcher that snuck into the shot. All bisqued, all waiting. The glaze decisions are on pause while I figure out what I actually want.",
     image: readyForGlazing,
     imageLarge: readyForGlazing,
-    status: "inquire",
+    status: "unavailable",
   },
   {
     id: 15,
@@ -149,7 +149,7 @@ const pieces = [
       "Ten test tiles, numbered and ready. I'm taking a class with ClaySpace's GM Mike to learn the chemistry behind the crystalline glaze I brought home from Japan. These tiles are how I'll know if I'm getting close.",
     image: glazeTiles,
     imageLarge: glazeTiles,
-    status: "inquire",
+    status: "unavailable",
   },
 ];
 

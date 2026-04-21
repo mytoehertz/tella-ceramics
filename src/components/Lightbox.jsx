@@ -18,7 +18,7 @@ export default function Lightbox({ piece, onClose }) {
       ? "Currently available"
       : piece.status === "sold"
         ? "Sold"
-        : "Inquire for availability";
+        : "Unavailable";
 
   return (
     <div
@@ -55,26 +55,9 @@ export default function Lightbox({ piece, onClose }) {
             <p className="font-light leading-relaxed text-[#2C2C2C]/80 mb-4">
               {piece.description}
             </p>
-            <p className="text-sm font-light text-[#2C2C2C]/60 mb-8">
+            <p className="text-sm font-light text-[#2C2C2C]/60">
               {statusLabel}
             </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 mt-4">
-            <a
-              href="https://www.instagram.com/tellaceramics"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#2C2C2C] text-[#2C2C2C] px-6 py-3 text-sm tracking-wide text-center hover:bg-[#2C2C2C] hover:text-[#FAF7F2] transition-colors"
-            >
-              DM on Instagram
-            </a>
-            <a
-              href="#"
-              className="border border-[#E0DBD3] text-[#2C2C2C]/60 px-6 py-3 text-sm tracking-wide text-center hover:border-[#2C2C2C] hover:text-[#2C2C2C] transition-colors"
-            >
-              Pay via PayPal / Venmo
-            </a>
           </div>
         </div>
       </div>
