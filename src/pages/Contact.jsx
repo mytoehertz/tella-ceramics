@@ -1,6 +1,13 @@
+import { useSearchParams } from "react-router-dom";
 import FadeInUp from "../components/FadeInUp";
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
+  const piece = searchParams.get("piece");
+  const prefill = piece
+    ? `Hi! I'm interested in ${piece} from Serie Taína. Could you send me details?\n\n`
+    : "";
+
   return (
     <section className="pt-28 md:pt-32 pb-24 px-6">
       <div className="max-w-[560px] mx-auto">
@@ -9,7 +16,9 @@ export default function Contact() {
             Get in touch
           </h1>
           <p className="font-light text-[#2C2C2C]/60 mb-12">
-            For commissions, purchases, or just to say hello.
+            {piece
+              ? `Inquiring about "${piece}" — just add your details below.`
+              : "For commissions, purchases, or just to say hello."}
           </p>
 
           <form
@@ -70,6 +79,7 @@ export default function Contact() {
                   name="message"
                   rows={5}
                   required
+                  defaultValue={prefill}
                   className="w-full border border-[#E0DBD3] bg-transparent px-4 py-3 text-sm font-light focus:outline-none focus:border-[#2C2C2C] transition-colors resize-none"
                 />
               </div>

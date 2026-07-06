@@ -1,6 +1,8 @@
 import { useState } from "react";
 import pieces, { heroBowl } from "../data/pieces";
+import glazes from "../data/glazes";
 import GalleryCard from "../components/GalleryCard";
+import GlazeSwatch from "../components/GlazeSwatch";
 import Lightbox from "../components/Lightbox";
 import FadeInUp from "../components/FadeInUp";
 
@@ -48,6 +50,41 @@ export default function Gallery() {
               <GalleryCard piece={piece} onClick={setSelected} />
             </FadeInUp>
           ))}
+        </div>
+
+        {/* Serie Taína — first glaze tests */}
+        <div className="mt-24 border-t border-[#E0DBD3] pt-16">
+          <FadeInUp>
+            <p className="mb-3 text-[11px] uppercase tracking-[0.4em] text-[#2C2C2C]/40">
+              Serie Taína — first glaze tests
+            </p>
+          </FadeInUp>
+          <FadeInUp>
+            <h2 className="mb-4 text-2xl font-light tracking-wide">
+              Results from the first batch of testing
+            </h2>
+          </FadeInUp>
+          <FadeInUp>
+            <p className="mb-10 max-w-[600px] font-light leading-[1.8] text-[#2C2C2C]/70">
+              Five glazes off one base, each pushed somewhere different. These
+              test tiles are how I locked in the colors before pulling them onto
+              black clay for the shop.
+            </p>
+          </FadeInUp>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
+            {glazes.map((glaze) => (
+              <FadeInUp key={glaze.id}>
+                <GlazeSwatch glaze={glaze} />
+                <div className="mt-3">
+                  <h3 className="text-sm font-normal">{glaze.name}</h3>
+                  <p className="mt-1 text-xs font-light text-[#2C2C2C]/50">
+                    {glaze.color}
+                  </p>
+                </div>
+              </FadeInUp>
+            ))}
+          </div>
         </div>
       </div>
 
