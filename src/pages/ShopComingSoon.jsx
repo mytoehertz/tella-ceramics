@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 // Vertical beams — light finding its way through slits in a dark room.
 // Each beam is a soft warm bar with a vertical fade mask; it breathes on
 // its own timing so the whole thing feels alive rather than looped.
@@ -14,15 +12,8 @@ const beams = [
 ];
 
 export default function ShopComingSoon() {
-  const navigate = useNavigate();
-  const enter = () => navigate("/shop/collection");
-
   return (
-    <button
-      onClick={enter}
-      aria-label="Enter the shop"
-      className="group fixed inset-0 z-[60] w-full h-full overflow-hidden bg-[#050505] cursor-pointer focus:outline-none"
-    >
+    <div className="fixed inset-0 z-[60] w-full h-full overflow-hidden bg-[#050505]">
       {/* Beams — the container reveals with a slow vertical bloom */}
       <div
         className="absolute inset-0"
@@ -80,17 +71,7 @@ export default function ShopComingSoon() {
         >
           Coming Soon
         </h1>
-        <p className="mt-6 max-w-md text-sm font-light leading-relaxed text-[#F5EEE0]/55">
-          Five glazes, five stories &mdash; pulled onto black clay. Fresh
-          out of the kiln, a step into the light.
-        </p>
-        <span
-          className="mt-14 text-[11px] uppercase tracking-[0.4em] text-[#F5EEE0]"
-          style={{ animation: "enter-pulse 2.8s ease-in-out infinite" }}
-        >
-          Step inside &rarr;
-        </span>
       </div>
-    </button>
+    </div>
   );
 }

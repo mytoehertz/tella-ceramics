@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import FadeInUp from "../components/FadeInUp";
+import InkUnderline from "../components/InkUnderline";
 
 export default function Home() {
   return (
@@ -21,12 +22,12 @@ export default function Home() {
               Exploring light, form, and the beauty of the broken. Made in New York.
             </p>
           </FadeInUp>
-          <FadeInUp className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-6">
+          <FadeInUp className="mt-8 flex flex-wrap items-center justify-center gap-6 md:gap-8">
             <Link
               to="/gallery"
-              className="border border-[#2C2C2C] px-6 py-3 text-sm tracking-wide hover:bg-[#2C2C2C] hover:text-[#FAF7F2] transition-colors"
+              className="text-sm tracking-wide text-[#2C2C2C] hover:opacity-70 transition-opacity"
             >
-              View Gallery
+              <InkUnderline>View Gallery</InkUnderline>
             </Link>
             <Link
               to="/shop"
@@ -40,7 +41,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-sm tracking-wide text-[#2C2C2C]/60 hover:text-[#2C2C2C] transition-colors"
             >
-              @tellaceramics &uarr;
+              <InkUnderline>@tellaceramics</InkUnderline> &uarr;
             </a>
           </FadeInUp>
         </div>
