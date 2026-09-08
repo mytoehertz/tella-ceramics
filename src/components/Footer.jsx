@@ -1,6 +1,13 @@
+import Newsletter from "./Newsletter";
+
 export default function Footer() {
   return (
     <footer className="pt-24 pb-10 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <Newsletter />
+        <div className="border-t border-[#E0DBD3] mt-14 mb-8" />
+      </div>
+
       <div className="max-w-[1200px] mx-auto flex items-center justify-center gap-4 text-sm font-light text-[#2C2C2C]/60">
         <span>&copy; 2026 Tella Ceramics</span>
         <a

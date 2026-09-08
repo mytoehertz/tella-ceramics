@@ -16,6 +16,21 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!--
+      Netlify detects forms by parsing the static HTML at deploy time, and this
+      is a client-rendered SPA — so the React form is invisible to it. This
+      hidden twin is what registers the form; keep its field names in sync with
+      src/pages/Contact.jsx. (The newsletter doesn't need one — it posts to the
+      function in netlify/functions/subscribe.js instead.)
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
