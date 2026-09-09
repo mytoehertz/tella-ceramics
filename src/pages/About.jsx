@@ -1,5 +1,5 @@
 import FadeInUp from "../components/FadeInUp";
-import studioGroup from "../assets/Studio2.jpg";
+import glazedBowl from "../assets/StudioBlueBowl.jpg";
 
 export default function About() {
   return (
@@ -9,8 +9,8 @@ export default function About() {
           {/* Image */}
           <FadeInUp>
             <img
-              src={studioGroup}
-              alt="The artist at work"
+              src={glazedBowl}
+              alt="A glazed bowl held in the studio — blue glaze breaking over speckled stoneware, with unfired pieces on the table behind"
               className="w-full h-auto object-cover"
               loading="lazy"
             />
