@@ -8,7 +8,7 @@ import { pathToFileURL } from "node:url";
 
 const dist = resolve("dist");
 const server = await import(pathToFileURL(resolve("dist-ssr/entry-server.js")).href);
-const { render, routes, headTags, llmsTxt, SITE_URL } = server;
+const { render, routes, headTags, llmsTxt, pageUrl } = server;
 
 const template = readFileSync(join(dist, "index.html"), "utf8");
 const titleTag = /<title>[^<]*<\/title>/;
@@ -31,7 +31,7 @@ for (const path of Object.keys(routes)) {
 const today = new Date(now).toISOString().slice(0, 10);
 const urls = Object.entries(routes)
   .filter(([, page]) => !page.noindex)
-  .map(([path]) => `  <url><loc>${SITE_URL}${path === "/" ? "/" : path}</loc><lastmod>${today}</lastmod></url>`)
+  .map(([path]) => `  <url><loc>${pageUrl(path)}</loc><lastmod>${today}</lastmod></url>`)
   .join("\n");
 writeFileSync(
   join(dist, "sitemap.xml"),

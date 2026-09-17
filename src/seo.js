@@ -10,6 +10,10 @@ import commission from "./data/commission";
 import glazes from "./data/glazes";
 
 export const SITE_URL = "https://tellaceramics.com";
+
+// Netlify serves each prerendered page from a folder and 301s /about to
+// /about/, so every URL we hand to crawlers uses the address it lands on.
+export const pageUrl = (path) => `${SITE_URL}${path === "/" ? "/" : `${path}/`}`;
 const OG_IMAGE = `${SITE_URL}/og.jpg`;
 const INSTAGRAM = "https://www.instagram.com/tellaceramics";
 
@@ -136,7 +140,7 @@ export function structuredData(path, now = Date.now()) {
         price: commission.deposit.toFixed(2),
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/shop`,
+        url: pageUrl("/shop"),
         seller: { "@id": `${SITE_URL}/#organization` },
       },
     });
@@ -150,7 +154,7 @@ const escapeAttr = (value) =>
 // The <head> tags for one route, as an HTML string.
 export function headTags(path, now) {
   const page = routes[path];
-  const url = `${SITE_URL}${path === "/" ? "" : path}`;
+  const url = pageUrl(path);
   const json = JSON.stringify(structuredData(path, now)).replace(/</g, "\\u003c");
   return [
     `<title>${escapeAttr(page.title)}</title>`,
@@ -186,19 +190,19 @@ export function llmsTxt(now = Date.now()) {
 - Custom handmade ceramic pieces made to order in New York
 - Starts with a $${commission.deposit} non-refundable deposit, credited in full toward the final price
 - Design, final price, and timeline are agreed over email before work begins
-- Start here: ${SITE_URL}/shop
+- Start here: ${pageUrl("/shop")}
 ${marketUpcoming ? `
 ## Upcoming market
 - ${market.name}, ${market.dateLabel}, ${market.hoursLabel}
 - ${market.where} (${market.venue}, ${market.address})
 ` : ""}
 ## Pages
-- [Home](${SITE_URL}/): overview of the studio
-- [Commissions](${SITE_URL}/shop): commission a custom piece
-- [Serie Taína glazes](${SITE_URL}/shop/collection): the glazes and their Taíno names
-- [Gallery](${SITE_URL}/gallery): finished work and glaze tests
-- [About](${SITE_URL}/about): the artist and the practice
-- [Contact](${SITE_URL}/contact): commissions, purchases, questions
+- [Home](${pageUrl("/")}): overview of the studio
+- [Commissions](${pageUrl("/shop")}): commission a custom piece
+- [Serie Taína glazes](${pageUrl("/shop/collection")}): the glazes and their Taíno names
+- [Gallery](${pageUrl("/gallery")}): finished work and glaze tests
+- [About](${pageUrl("/about")}): the artist and the practice
+- [Contact](${pageUrl("/contact")}): commissions, purchases, questions
 
 ## Elsewhere
 - Instagram: ${INSTAGRAM} (@tellaceramics)
