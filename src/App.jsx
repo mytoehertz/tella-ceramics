@@ -1,4 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { routes } from "./seo";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -12,6 +14,15 @@ import Privacy from "./pages/Privacy";
 import MarketPopup from "./components/MarketPopup";
 
 export default function App() {
+  const { pathname } = useLocation();
+
+  // Prerendered HTML carries each page's title; keep the tab title right as
+  // visitors move between pages without a reload.
+  useEffect(() => {
+    const page = routes[pathname.replace(/\/+$/, "") || "/"];
+    if (page) document.title = page.title;
+  }, [pathname]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
