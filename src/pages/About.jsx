@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import FadeInUp from "../components/FadeInUp";
 import glazedBowl from "../assets/StudioBlueBowl.jpg";
 
@@ -54,9 +55,12 @@ export default function About() {
                 >
                   Instagram &mdash; @tellaceramics
                 </a>
-                <p className="text-sm font-light text-[#2C2C2C]/60">
-                  Commissions currently closed &mdash; exploring new directions
-                </p>
+                <Link
+                  to="/shop"
+                  className="text-sm font-light hover:opacity-60 transition-opacity"
+                >
+                  Commissions open &mdash; start with a $100 deposit &rarr;
+                </Link>
               </div>
             </div>
           </FadeInUp>

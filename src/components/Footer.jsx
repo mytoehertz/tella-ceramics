@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Newsletter from "./Newsletter";
 
 export default function Footer() {
@@ -10,6 +11,12 @@ export default function Footer() {
 
       <div className="max-w-[1200px] mx-auto flex items-center justify-center gap-4 text-sm font-light text-[#2C2C2C]/60">
         <span>&copy; 2026 Tella Ceramics</span>
+        <Link to="/privacy" className="hover:opacity-60 transition-opacity">
+          Privacy
+        </Link>
+        <Link to="/shop#terms" className="hover:opacity-60 transition-opacity">
+          Terms
+        </Link>
         <a
           href="https://www.instagram.com/tellaceramics"
           target="_blank"

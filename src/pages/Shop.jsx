@@ -1,130 +1,113 @@
-import { Link } from "react-router-dom";
-import glazes from "../data/glazes";
-import GlazeSwatch from "../components/GlazeSwatch";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import FadeInUp from "../components/FadeInUp";
+import CommissionMark from "../components/CommissionMark";
+import commission, { STRIPE_PAYMENT_LINK } from "../data/commission";
 
-const forms = [
-  "Desk lamps",
-  "Vase lamps",
-  "Mushroom tealights",
-  "Rice bowls",
-  "Pasta bowls",
-  "Mugs",
-  "Lidded jars",
-];
-
-function GlazeCard({ glaze }) {
-  return (
-    <div className="group">
-      <GlazeSwatch glaze={glaze} />
-      <div className="mt-4">
-        <p className="text-[11px] uppercase tracking-[0.25em] text-[#2C2C2C]/40">
-          {glaze.color}
-        </p>
-        <h3 className="mt-1 text-xl font-light tracking-wide">
-          {glaze.name}
-          <span className="text-[#2C2C2C]/40"> — {glaze.gloss}</span>
-        </h3>
-        <p className="mt-3 text-sm font-light leading-[1.75] text-[#2C2C2C]/70">
-          {glaze.story}
-        </p>
-        <Link
-          to={`/contact?piece=${encodeURIComponent(`${glaze.name} (${glaze.color})`)}`}
-          className="mt-3 inline-block text-sm font-light tracking-wide hover:opacity-60 transition-opacity"
-        >
-          Email about this glaze &rarr;
-        </Link>
-      </div>
-    </div>
-  );
-}
+const buttonClass =
+  "inline-block w-full sm:w-auto text-center bg-[#2C2C2C] text-[#FAF7F2] px-8 py-3.5 text-sm tracking-wide font-light hover:bg-[#2C2C2C]/85 transition-colors";
 
 export default function Shop() {
+  const { hash } = useLocation();
+
+  // The router doesn't jump to anchors, and /shop#terms is linked from the
+  // footer and from Stripe's checkout — so scroll there once the page renders.
+  useEffect(() => {
+    if (!hash) return;
+    const target = document.getElementById(hash.slice(1));
+    if (target) requestAnimationFrame(() => target.scrollIntoView());
+  }, [hash]);
+
   return (
     <section className="pt-28 md:pt-32 pb-24 px-6">
       <div className="max-w-[1200px] mx-auto">
-        {/* Intro */}
-        <div className="max-w-[640px] mb-20">
+        <FadeInUp>
+          <p className="mb-10 text-[11px] uppercase tracking-[0.4em] text-[#2C2C2C]/40">
+            Shop
+          </p>
+        </FadeInUp>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <FadeInUp>
-            <p className="mb-4 text-[11px] uppercase tracking-[0.4em] text-[#2C2C2C]/40">
-              Serie Taína
-            </p>
+            <CommissionMark />
           </FadeInUp>
+
           <FadeInUp>
-            <h1 className="mb-6 text-3xl md:text-4xl font-light tracking-wide">
-              Five glazes, thrown in black clay
-            </h1>
-          </FadeInUp>
-          <FadeInUp>
-            <p className="mb-4 font-light leading-[1.8] text-[#2C2C2C]/70">
-              Serie Taína names each glaze for a word or figure from Taíno
-              language and cosmology &mdash; the Indigenous people of Borikén
-              (Puerto Rico). It&rsquo;s a nod to my family&rsquo;s land in
-              Utuado, the mountain region that became one of the last
-              strongholds of Taíno resistance after 1511, and home to Caguana,
-              the largest Indigenous ceremonial site in the Caribbean.
-            </p>
-          </FadeInUp>
-          <FadeInUp>
-            <p className="font-light leading-[1.8] text-[#2C2C2C]/70">
-              Nothing&rsquo;s for sale through the site just yet &mdash; these
-              are the first results out of the kiln. If a glaze or a form calls
-              to you, email me and we&rsquo;ll sort it out over Venmo.
-            </p>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-[#2C2C2C]/40">
+                Commissions open
+              </p>
+              <h1 className="mt-2 text-3xl md:text-4xl font-light tracking-wide">
+                {commission.title}
+              </h1>
+              <p className="mt-4 text-xl font-light">
+                ${commission.deposit}{" "}
+                <span className="text-base text-[#2C2C2C]/50">deposit</span>
+              </p>
+
+              <p className="mt-8 font-light leading-[1.8] text-[#2C2C2C]/70">
+                {commission.summary}
+              </p>
+
+              <ol className="mt-8 flex flex-col gap-3">
+                {commission.steps.map((step, i) => (
+                  <li key={step} className="flex gap-4 text-sm font-light leading-[1.7]">
+                    <span className="text-[#2C2C2C]/35 tabular-nums">{i + 1}</span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+
+              <div className="mt-10">
+                {STRIPE_PAYMENT_LINK ? (
+                  <a href={STRIPE_PAYMENT_LINK} className={buttonClass}>
+                    Pay ${commission.deposit} deposit
+                  </a>
+                ) : (
+                  <Link
+                    to={`/contact?piece=${encodeURIComponent(commission.title)}`}
+                    className={buttonClass}
+                  >
+                    Request a commission
+                  </Link>
+                )}
+                <p className="mt-4 text-sm font-light text-[#2C2C2C]/50">
+                  Non-refundable &middot; credited toward your final price &middot;{" "}
+                  <a href="#terms" className="underline underline-offset-4 hover:opacity-60 transition-opacity">
+                    terms
+                  </a>
+                </p>
+              </div>
+            </div>
           </FadeInUp>
         </div>
 
-        {/* Glazes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-          {glazes.map((glaze) => (
-            <FadeInUp key={glaze.id}>
-              <GlazeCard glaze={glaze} />
-            </FadeInUp>
-          ))}
-        </div>
-
-        {/* Forms */}
-        <div className="mt-24 border-t border-[#E0DBD3] pt-16 max-w-[640px]">
+        {/* Terms — also the terms-of-service URL given to Stripe */}
+        <div
+          id="terms"
+          className="mt-24 border-t border-[#E0DBD3] pt-16 max-w-[640px] scroll-mt-28"
+        >
           <FadeInUp>
             <p className="mb-4 text-[11px] uppercase tracking-[0.4em] text-[#2C2C2C]/40">
-              Forms in the series
+              Commission terms
             </p>
           </FadeInUp>
           <FadeInUp>
-            <h2 className="mb-6 text-2xl font-light tracking-wide">
-              What&rsquo;s being made
-            </h2>
-          </FadeInUp>
-          <FadeInUp>
-            <p className="font-light leading-[1.8] text-[#2C2C2C]/70">
-              Each form is thrown in black clay and finished in the Taíno
-              palette.
-            </p>
-          </FadeInUp>
-          <FadeInUp>
-            <p className="mb-8 font-light leading-[1.8] text-[#2C2C2C]/70">
-              Launching soon &mdash; email to reserve one in the glaze
-              you&rsquo;re after.
-            </p>
-          </FadeInUp>
-          <FadeInUp>
-            <ul className="flex flex-wrap gap-3">
-              {forms.map((form) => (
-                <li
-                  key={form}
-                  className="border border-[#E0DBD3] px-4 py-2 text-sm font-light tracking-wide"
-                >
-                  {form}
-                </li>
+            <ul className="flex flex-col gap-3 font-light leading-[1.8] text-[#2C2C2C]/70">
+              {commission.terms.map((term) => (
+                <li key={term}>{term}</li>
               ))}
             </ul>
           </FadeInUp>
+        </div>
+
+        <div className="mt-16 max-w-[640px]">
           <FadeInUp>
             <Link
-              to="/contact?piece=Serie%20Taína"
-              className="mt-10 inline-block border border-[#2C2C2C] px-6 py-3 text-sm tracking-wide hover:bg-[#2C2C2C] hover:text-[#FAF7F2] transition-colors"
+              to="/shop/collection"
+              className="text-sm tracking-wide font-light hover:opacity-60 transition-opacity"
             >
-              Email about the collection
+              See the Serie Taína glazes &rarr;
             </Link>
           </FadeInUp>
         </div>
