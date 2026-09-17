@@ -1,15 +1,17 @@
 import { useState } from "react";
 import pieces, { heroBowl } from "../data/pieces";
 import glazes from "../data/glazes";
-import GalleryCard from "../components/GalleryCard";
 import GlazeSwatch from "../components/GlazeSwatch";
 import Lightbox from "../components/Lightbox";
+import { Link } from "react-router-dom";
 import FadeInUp from "../components/FadeInUp";
 
 export default function Gallery() {
   const [selected, setSelected] = useState(null);
+  // Only Tokyo Blue stays up while everything is reshot in the Serie Taína
+  // glazes. The rest of the pieces are still in data/pieces.js — to bring the
+  // grid back, render pieces.slice(1) with GalleryCard where the banner is.
   const featured = pieces[0];
-  const grid = pieces.slice(1);
 
   return (
     <section className="pt-28 md:pt-32 pb-24 px-6">
@@ -43,14 +45,27 @@ export default function Gallery() {
           </div>
         </FadeInUp>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
-          {grid.map((piece) => (
-            <FadeInUp key={piece.id}>
-              <GalleryCard piece={piece} onClick={setSelected} />
-            </FadeInUp>
-          ))}
-        </div>
+        {/* Under construction — stands in for the grid during the reshoot */}
+        <FadeInUp>
+          <div className="bg-[#EFEBE4] px-6 py-16 md:py-24 text-center">
+            <h2 className="text-3xl md:text-5xl font-extralight tracking-[0.12em] uppercase">
+              Under Construction
+            </h2>
+            <p className="mt-5 text-[11px] uppercase tracking-[0.4em] text-[#2C2C2C]/45">
+              Reshooting every piece in Serie Taína
+            </p>
+            <p className="mt-6 mx-auto max-w-[480px] font-light leading-[1.8] text-[#2C2C2C]/65">
+              The rest of the gallery is coming back glazed in the new colors.
+              In the meantime, see where they came from.
+            </p>
+            <Link
+              to="/shop/collection"
+              className="mt-8 inline-block border border-[#2C2C2C] px-6 py-3 text-sm tracking-wide font-light hover:bg-[#2C2C2C] hover:text-[#FAF7F2] transition-colors"
+            >
+              See the Serie Taína glazes
+            </Link>
+          </div>
+        </FadeInUp>
 
         {/* Serie Taína — first glaze tests */}
         <div className="mt-24 border-t border-[#E0DBD3] pt-16">
