@@ -39,7 +39,7 @@ export const routes = {
   "/about": {
     title: "About — Tella Ceramics",
     description:
-      "Tella Ceramics is a New York ceramics practice rooted in Caguana, Puerto Rico and shaped by techniques studied in Kyoto — light, black clay, and the beauty of the broken.",
+      "Juan Hernandez is the ceramic artist behind Tella Ceramics in New York — a practice rooted in Caguana, Puerto Rico and shaped by techniques studied in Kyoto. Light, black clay, and the beauty of the broken.",
   },
   "/contact": {
     title: "Contact — Tella Ceramics",
@@ -58,6 +58,35 @@ export const routes = {
   },
 };
 
+const artist = {
+  "@type": "Person",
+  "@id": `${SITE_URL}/#artist`,
+  name: "Juan Hernandez",
+  jobTitle: "Ceramic artist",
+  description:
+    "Ceramic artist based in New York City, originally from Caguana, Utuado, Puerto Rico. Founder of Tella Ceramics, making wheel-thrown lighting and dinnerware in black clay with custom glazes.",
+  url: pageUrl("/about"),
+  image: OG_IMAGE,
+  sameAs: [INSTAGRAM],
+  worksFor: { "@id": `${SITE_URL}/#organization` },
+  homeLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "New York",
+      addressRegion: "NY",
+      addressCountry: "US",
+    },
+  },
+  knowsAbout: [
+    "Ceramics",
+    "Wheel throwing",
+    "Glaze chemistry",
+    "Kintsugi",
+    "Taíno heritage",
+  ],
+};
+
 const organization = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
@@ -68,6 +97,7 @@ const organization = {
   image: OG_IMAGE,
   description:
     "Handmade ceramics studio in New York City making lighting and dinnerware in black clay with custom glazes, including Serie Taína, named for the Taíno heritage of Utuado, Puerto Rico. Takes custom commissions.",
+  founder: { "@id": `${SITE_URL}/#artist` },
   sameAs: [INSTAGRAM],
   address: {
     "@type": "PostalAddress",
@@ -116,7 +146,7 @@ function marketEvent() {
 
 // Structured data for one route, evaluated at build time.
 export function structuredData(path, now = Date.now()) {
-  const graph = [organization];
+  const graph = [organization, artist];
   const marketUpcoming = now < new Date(market.endsAt).getTime();
 
   if (path === "/") {
@@ -178,7 +208,12 @@ export function llmsTxt(now = Date.now()) {
   const marketUpcoming = now < new Date(market.endsAt).getTime();
   return `# Tella Ceramics
 
-> Handmade ceramics studio in New York City (テラ). Wheel-thrown lighting and dinnerware in black clay with custom glazes. Rooted in Caguana, Utuado, Puerto Rico, and shaped by techniques studied in Kyoto and Tokyo. Custom commissions are open.
+> Handmade ceramics studio in New York City (テラ), run by ceramic artist Juan Hernandez. Wheel-thrown lighting and dinnerware in black clay with custom glazes. Rooted in Caguana, Utuado, Puerto Rico, and shaped by techniques studied in Kyoto and Tokyo. Custom commissions are open.
+
+## Who
+- Juan Hernandez, ceramic artist, New York City
+- Raised in Caguana, Utuado, Puerto Rico; studied techniques in Kyoto and Tokyo
+- Founder and maker behind Tella Ceramics
 
 ## What Tella Ceramics makes
 - Ceramic lighting: mushroom desk lamps, vase lamps, mushroom tealights

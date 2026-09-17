@@ -25,7 +25,8 @@ export default function About() {
               </h1>
 
               <p className="font-light leading-[1.8] mb-6">
-                I grew up in Caguana, Puerto Rico, anchored by my
+                I&rsquo;m Juan Hernandez, the potter behind Tella Ceramics. I
+                grew up in Caguana, Puerto Rico, anchored by my
                 people&rsquo;s ties to the land and the quiet magic of my
                 mother&rsquo;s ceramics studio. Today, working out of New York,
                 I have rekindled my love for clay as my truest form of
